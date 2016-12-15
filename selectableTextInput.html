@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+  <script src="selectableTextInput.js"></script>
+  <script src="choosableCombobox.js"></script>
+  <style>
+  button {
+    box-sizing: border-box;
+    text-align: left;
+    width: 20em;
+    height: 2em;
+  }
+  .selectableTextInput * {
+    box-sizing: border-box;
+  }
+  .selectableTextInput {
+    position: absolute;
+    z-index: 1000;
+  }
+  .selectableTextInput,
+  .selectableTextInput select,
+  .selectableTextInput input {
+    width: 20em;
+  }
+  .selectableTextInput.close {
+    left: -4000px;
+  }
+  </style>
+</head>
+<body>
+  <button type="button" id="chooser">選択</button>
+  <script>
+  var elements = selectableTextInput(document.getElementById("chooser"), [
+    "あいうえお", "かきくけこ", "さしすせそ", "たちつてと", "なにぬねの",
+      "あいうえお", "かきくけこ", "さしすせそ", "たちつてと", "なにぬねの",
+        "あいうえお", "かきくけこ", "さしすせそ", "たちつてと", "なにぬねの",
+  ]);
+  choosableCombobox(elements.search, elements.list);
+  </script>
+</body>
+</html>
